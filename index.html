@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sprunki Sinner Edition</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <script src="js/share.js"></script>
+  </head>
+  <body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-sm fixed w-full top-0 z-50">
+      <div class="container mx-auto px-6 py-3">
+        <div class="flex items-center justify-between relative">
+          <!-- Logo -->
+          <a href="#" class="flex items-center space-x-2">
+            <img src="images/logo.png" alt="Sprunki Logo" class="w-10 h-10"/>
+            <span class="text-xl font-bold text-gray-800">Sprunki</span>
+          </a>
+
+          <!-- Navigation -->
+          <nav class="hidden md:flex items-center space-x-8 absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
+            <a href="#" class="text-gray-600 hover:text-blue-600 transition">Home</a>
+            <a href="#game-modes" class="text-gray-600 hover:text-blue-600 transition">Game Modes</a>
+            <a href="#features" class="text-gray-600 hover:text-blue-600 transition">Features</a>
+            <a href="#tips" class="text-gray-600 hover:text-blue-600 transition">Tips</a>
+            <a href="#faq" class="text-gray-600 hover:text-blue-600 transition">FAQ</a>
+          </nav>
+
+          <!-- Mobile Menu Button -->
+          <button class="md:hidden text-gray-600 hover:text-blue-600 transition">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Navigation Menu (Hidden by default) -->
+      <div class="md:hidden hidden">
+        <div class="px-4 py-3 space-y-2">
+          <a href="#" class="block text-gray-600 hover:text-blue-600 transition">Home</a>
+          <a href="#game-modes" class="block text-gray-600 hover:text-blue-600 transition">Game Modes</a>
+          <a href="#features" class="block text-gray-600 hover:text-blue-600 transition">Features</a>
+          <a href="#tips" class="block text-gray-600 hover:text-blue-600 transition">Tips</a>
+          <a href="#faq" class="block text-gray-600 hover:text-blue-600 transition">FAQ</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Add padding to body to account for fixed header -->
+    <div class="pt-16">
+      <!-- Hero Section -->
+      <section class="pt-24 pb-12 px-6">
+        <div class="container mx-auto text-center mb-12">
+          <h1 class="text-5xl font-bold text-gray-900 mb-4">Sprunki Sinner Edition</h1>
+          <p class="text-xl text-gray-600">Welcome to the world of Sprunki Sinner Edition</p>
+        </div>
+
+        <div class="container mx-auto grid grid-cols-1 lg:grid-cols-4 gap-8">
+          <!-- Left column for Game Playground and Game Modes -->
+          <div class="lg:col-span-3 space-y-8">
+            <!-- Game Playground -->
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+              <h2 class="text-3xl font-bold text-gray-900 text-center mb-8">Game Playground</h2>
+              <iframe src="https://cocrea.world/player/1857996988694446082" class="w-full h-[750px]" frameborder="0"></iframe>
+            </div>
+
+            <!-- Social Share Buttons -->
+            <div class="flex justify-center items-center space-x-4 mt-6">
+              <!-- X (Twitter) -->
+              <a href="#" id="share-x" class="transform transition hover:scale-110">
+                <div class="w-10 h-10 bg-black rounded-full flex items-center justify-center">
+                  <svg class="w-4 h-4 text-white" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M16.99 0h2.87l-6.27 7.17L20.61 19h-5.76l-4.62-7.22L4.83 19H1.96l6.71-7.67L1.96 0h5.91l4.18 6.54L16.99 0zm-1.36 17.06h1.59L7.68 1.89H5.98l9.65 15.17z"/>
+                  </svg>
+                </div>
+              </a>
+
+              <!-- Facebook -->
+              <a href="#" id="share-facebook" class="transform transition hover:scale-110">
+                <div class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center">
+                  <i class="fab fa-facebook-f text-white text-xl"></i>
+                </div>
+              </a>
+
+              <!-- Reddit -->
+              <a href="#" id="share-reddit" class="transform transition hover:scale-110">
+                <div class="w-10 h-10 bg-orange-600 rounded-full flex items-center justify-center">
+                  <i class="fab fa-reddit-alien text-white text-xl"></i>
+                </div>
+              </a>
+
+              <!-- Pinterest -->
+              <a href="#" id="share-pinterest" class="transform transition hover:scale-110">
+                <div class="w-10 h-10 bg-red-600 rounded-full flex items-center justify-center">
+                  <i class="fab fa-pinterest-p text-white text-xl"></i>
+                </div>
+              </a>
+
+              <!-- Share Button -->
+              <button id="share-general" class="flex items-center space-x-2 px-4 py-2 bg-gray-100 text-gray-700 rounded-full hover:bg-gray-200 transition duration-300">
+                <i class="fas fa-link"></i>
+                <span>Share</span>
+              </button>
+            </div>
+
+            <!-- Game Modes Grid -->
+            <div>
+              <h2 class="text-3xl font-bold text-gray-900 text-center mb-8">Game Modes</h2>
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div
+                  class="bg-white rounded-lg shadow-md overflow-hidden cursor-pointer transform transition hover:scale-105"
+                >
+                  <img src="images/mode-1.jpg" alt="Classic Mode" class="w-full h-48 object-cover" />
+                  <div class="p-4">
+                    <div class="flex items-center justify-between">
+                      <h3 class="text-lg font-semibold">Classic Mode</h3>
+                      <span class="bg-red-500 text-white text-xs px-2 py-1 rounded-full">Hot</span>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="bg-white rounded-lg shadow-md overflow-hidden cursor-pointer transform transition hover:scale-105"
+                >
+                  <img src="images/mode-2.jpg" alt="Adventure Mode" class="w-full h-48 object-cover" />
+                  <div class="p-4">
+                    <div class="flex items-center justify-between">
+                      <h3 class="text-lg font-semibold">Adventure Mode</h3>
+                      <span class="bg-green-500 text-white text-xs px-2 py-1 rounded-full">New</span>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="bg-white rounded-lg shadow-md overflow-hidden cursor-pointer transform transition hover:scale-105"
+                >
+                  <img src="images/mode-3.jpg" alt="Battle Mode" class="w-full h-48 object-cover" />
+                  <div class="p-4">
+                    <div class="flex items-center justify-between">
+                      <h3 class="text-lg font-semibold">Battle Mode</h3>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right column for Mods Sidebar -->
+          <div class="lg:col-span-1 space-y-4">
+            <h2 class="text-2xl font-bold text-gray-900 mb-6">Sprunki Mods</h2>
+            <div class="space-y-4">
+              <div class="bg-white rounded-lg shadow-md p-4 cursor-pointer transform transition hover:scale-105">
+                <img src="images/sprunki-1.jpg" alt="Sprunki-1" class="w-full h-48 object-cover rounded-lg mb-4" />
+                <div class="flex items-center justify-between">
+                  <h3 class="text-lg font-semibold">Sprunki-1</h3>
+                  <span class="bg-green-500 text-white text-xs px-2 py-1 rounded-full">New</span>
+                </div>
+              </div>
+              <div class="bg-white rounded-lg shadow-md p-4 cursor-pointer transform transition hover:scale-105">
+                <img src="images/sprunki-2.jpg" alt="Sprunki-2" class="w-full h-48 object-cover rounded-lg mb-4" />
+                <div class="flex items-center justify-between">
+                  <h3 class="text-lg font-semibold">Sprunki-2</h3>
+                  <span class="bg-red-500 text-white text-xs px-2 py-1 rounded-full">Hot</span>
+                </div>
+              </div>
+              <div class="bg-white rounded-lg shadow-md p-4 cursor-pointer transform transition hover:scale-105">
+                <img src="images/sprunki-3.jpg" alt="Sprunki-3" class="w-full h-48 object-cover rounded-lg mb-4" />
+                <div class="flex items-center justify-between">
+                  <h3 class="text-lg font-semibold">Sprunki-3</h3>
+                  <span class="bg-green-500 text-white text-xs px-2 py-1 rounded-full">New</span>
+                </div>
+              </div>
+              <div class="bg-white rounded-lg shadow-md p-4 cursor-pointer transform transition hover:scale-105">
+                <img src="images/sprunki-4.jpg" alt="Sprunki-4" class="w-full h-48 object-cover rounded-lg mb-4" />
+                <div class="flex items-center justify-between">
+                  <h3 class="text-lg font-semibold">Sprunki-4</h3>
+                  <span class="bg-green-500 text-white text-xs px-2 py-1 rounded-full">New</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- What is Section -->
+      <section class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+          <!-- Sprunki Sinner Introduction -->
+          <div class="text-center mb-16">
+            <h2 class="text-3xl font-bold text-gray-900 mb-6">What is Sprunki Sinner?</h2>
+            <p class="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
+              Sprunki Sinner is an exciting web-based game that combines classic gameplay with modern features. Dive into
+              a world of endless possibilities with customizable mods, multiplayer experiences, and challenging game modes
+              that will keep you coming back for more.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="text-center">
+              <i class="fas fa-gamepad text-4xl text-primary mb-4"></i>
+              <h3 class="text-xl font-bold mb-2">Immersive Gameplay</h3>
+              <p class="text-gray-600">Experience stunning graphics and smooth controls</p>
+            </div>
+            <div class="text-center">
+              <i class="fas fa-users text-4xl text-primary mb-4"></i>
+              <h3 class="text-xl font-bold mb-2">Multiplayer Support</h3>
+              <p class="text-gray-600">Play with friends or compete globally</p>
+            </div>
+            <div class="text-center">
+              <i class="fas fa-puzzle-piece text-4xl text-primary mb-4"></i>
+              <h3 class="text-xl font-bold mb-2">Custom Mods</h3>
+              <p class="text-gray-600">Endless possibilities with community mods</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- How to Play Section -->
+      <section id="how-to-play" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
+          <h2 class="text-3xl font-bold text-center mb-12">How to Play</h2>
+          <div class="max-w-4xl mx-auto relative">
+            <!-- Timeline Line -->
+            <div class="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-blue-500"></div>
+
+            <!-- Step 1 -->
+            <div class="relative mb-16">
+              <div class="flex items-center justify-between">
+                <!-- Left Content -->
+                <div class="w-5/12">
+                  <div class="bg-white p-6 rounded-lg shadow-md transform transition hover:scale-105">
+                    <h3 class="text-xl font-bold mb-3">Choose Your Mode</h3>
+                    <p class="text-gray-600">
+                      Select from various game modes including Classic, Time Attack, and Challenge Mode.
+                    </p>
+                  </div>
+                </div>
+                <!-- Timeline Point -->
+                <div class="absolute left-1/2 transform -translate-x-1/2 flex items-center justify-center">
+                  <div class="w-8 h-8 bg-blue-500 rounded-full text-white flex items-center justify-center font-bold">
+                    1
+                  </div>
+                </div>
+                <!-- Right Content -->
+                <div class="w-5/12">
+                  <img src="images/step1.jpg" alt="Choose Mode" class="rounded-lg shadow-md w-full h-48 object-cover" />
+                </div>
+              </div>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="relative mb-16">
+              <div class="flex items-center justify-between">
+                <!-- Left Content -->
+                <div class="w-5/12">
+                  <img
+                    src="images/step2.jpg"
+                    alt="Select Character"
+                    class="rounded-lg shadow-md w-full h-48 object-cover"
+                  />
+                </div>
+                <!-- Timeline Point -->
+                <div class="absolute left-1/2 transform -translate-x-1/2 flex items-center justify-center">
+                  <div class="w-8 h-8 bg-blue-500 rounded-full text-white flex items-center justify-center font-bold">
+                    2
+                  </div>
+                </div>
+                <!-- Right Content -->
+                <div class="w-5/12">
+                  <div class="bg-white p-6 rounded-lg shadow-md transform transition hover:scale-105">
+                    <h3 class="text-xl font-bold mb-3">Customize Your Character</h3>
+                    <p class="text-gray-600">
+                      Personalize your character with different skins, accessories, and power-ups.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="relative">
+              <div class="flex items-center justify-between">
+                <!-- Left Content -->
+                <div class="w-5/12">
+                  <div class="bg-white p-6 rounded-lg shadow-md transform transition hover:scale-105">
+                    <h3 class="text-xl font-bold mb-3">Start Playing</h3>
+                    <p class="text-gray-600">
+                      Jump into the action and compete with players worldwide for the highest score!
+                    </p>
+                  </div>
+                </div>
+                <!-- Timeline Point -->
+                <div class="absolute left-1/2 transform -translate-x-1/2 flex items-center justify-center">
+                  <div class="w-8 h-8 bg-blue-500 rounded-full text-white flex items-center justify-center font-bold">
+                    3
+                  </div>
+                </div>
+                <!-- Right Content -->
+                <div class="w-5/12">
+                  <img src="images/step3.jpg" alt="Start Playing" class="rounded-lg shadow-md w-full h-48 object-cover" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Video Tutorial Link -->
+          <div class="mt-16 text-center">
+            <h3 class="text-2xl font-bold mb-6">Watch Tutorial Video</h3>
+            <div
+              class="max-w-7xl mx-auto bg-white rounded-lg shadow-md overflow-hidden transform transition hover:scale-105"
+            >
+              <div class="aspect-video">
+                <iframe
+                  class="w-full h-full"
+                  src="https://www.youtube.com/embed/kfS0oOkPsW8"
+                  title="Unlock the Ultimate Experience in Sprunki Sinner Edition!"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                ></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Detailed Features Grid -->
+      <section id="features" class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+          <h2 class="text-3xl font-bold text-center mb-4">Game Features</h2>
+          <p class="text-gray-600 text-center mb-12 max-w-2xl mx-auto">
+            Discover all the exciting features that make Sprunki Sinner an unforgettable gaming experience. From global
+            competitions to personalized gameplay, we've got everything you need for endless entertainment.
+          </p>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="bg-white rounded-lg shadow-md p-6 text-center">
+              <i class="fas fa-globe text-4xl text-primary mb-4"></i>
+              <h3 class="text-xl font-bold mb-2">Global Leaderboards</h3>
+              <p class="text-gray-600">Compete with players worldwide and climb the rankings</p>
+            </div>
+            <div class="bg-white rounded-lg shadow-md p-6 text-center">
+              <i class="fas fa-cog text-4xl text-primary mb-4"></i>
+              <h3 class="text-xl font-bold mb-2">Custom Settings</h3>
+              <p class="text-gray-600">Adjust game settings to your preferences</p>
+            </div>
+            <div class="bg-white rounded-lg shadow-md p-6 text-center">
+              <i class="fas fa-users text-4xl text-primary mb-4"></i>
+              <h3 class="text-xl font-bold mb-2">Multiplayer</h3>
+              <p class="text-gray-600">Play with friends or join random matches</p>
+            </div>
+            <div class="bg-white rounded-lg shadow-md p-6 text-center">
+              <i class="fas fa-trophy text-4xl text-primary mb-4"></i>
+              <h3 class="text-xl font-bold mb-2">Achievements</h3>
+              <p class="text-gray-600">Unlock special rewards and badges</p>
+            </div>
+            <div class="bg-white rounded-lg shadow-md p-6 text-center">
+              <i class="fas fa-comments text-4xl text-primary mb-4"></i>
+              <h3 class="text-xl font-bold mb-2">Community</h3>
+              <p class="text-gray-600">Join our active gaming community</p>
+            </div>
+            <div class="bg-white rounded-lg shadow-md p-6 text-center">
+              <i class="fas fa-chart-line text-4xl text-primary mb-4"></i>
+              <h3 class="text-xl font-bold mb-2">Progress Tracking</h3>
+              <p class="text-gray-600">Monitor your gaming statistics and improvements</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Game Tips Section -->
+      <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
+          <h2 class="text-3xl font-bold text-center mb-4">Pro Gaming Tips</h2>
+          <p class="text-gray-600 text-center mb-12 max-w-2xl mx-auto">
+            Master these essential tips and tricks to improve your gameplay and dominate the leaderboards.
+          </p>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- Tip 1 -->
+            <div class="bg-white rounded-lg shadow-md p-6 transform transition hover:scale-105">
+              <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center mb-4 mx-auto">
+                <i class="fas fa-bolt text-white text-xl"></i>
+              </div>
+              <h3 class="text-lg font-bold text-center mb-3">Quick Start</h3>
+              <p class="text-gray-600 text-center">
+                Master the perfect timing for speed boosts at the beginning of each round
+              </p>
+            </div>
+
+            <!-- Tip 2 -->
+            <div class="bg-white rounded-lg shadow-md p-6 transform transition hover:scale-105">
+              <div class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center mb-4 mx-auto">
+                <i class="fas fa-shield-alt text-white text-xl"></i>
+              </div>
+              <h3 class="text-lg font-bold text-center mb-3">Defense Strategy</h3>
+              <p class="text-gray-600 text-center">
+                Learn to use obstacles as shields and time your defensive moves perfectly
+              </p>
+            </div>
+
+            <!-- Tip 3 -->
+            <div class="bg-white rounded-lg shadow-md p-6 transform transition hover:scale-105">
+              <div class="w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center mb-4 mx-auto">
+                <i class="fas fa-gem text-white text-xl"></i>
+              </div>
+              <h3 class="text-lg font-bold text-center mb-3">Power-up Mastery</h3>
+              <p class="text-gray-600 text-center">
+                Save power-ups for critical moments and chain them for maximum effect
+              </p>
+            </div>
+
+            <!-- Tip 4 -->
+            <div class="bg-white rounded-lg shadow-md p-6 transform transition hover:scale-105">
+              <div class="w-12 h-12 bg-black rounded-full flex items-center justify-center mb-4 mx-auto">
+                <i class="fas fa-fire text-white text-xl"></i>
+              </div>
+              <h3 class="text-lg font-bold text-center mb-3">Combo Tricks</h3>
+              <p class="text-gray-600 text-center">
+                Practice advanced move combinations to maximize your score multipliers
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA Section -->
+      <section class="py-20 bg-gray-100">
+        <div class="container mx-auto px-6 text-center">
+          <h2 class="text-4xl font-bold text-gray-800 mb-4">Ready to Join the Adventure?</h2>
+          <p class="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+            Jump into the exciting world of Sprunki Sinner and start your journey to become a champion!
+          </p>
+          <div class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6">
+            <a
+              href="#"
+              class="px-8 py-4 bg-blue-600 text-white font-bold rounded-lg shadow-lg transform transition hover:scale-105 hover:bg-blue-700"
+            >
+              Play Now
+            </a>
+            <a
+              href="#"
+              class="px-8 py-4 bg-transparent border-2 border-blue-600 text-blue-600 font-bold rounded-lg transform transition hover:scale-105 hover:bg-blue-50"
+            >
+              Learn More
+            </a>
+          </div>
+          <div class="mt-12 flex justify-center items-center space-x-8">
+            <div class="text-center">
+              <div class="text-3xl font-bold text-gray-800 mb-2">100k+</div>
+              <div class="text-gray-600">Active Players</div>
+            </div>
+            <div class="text-center">
+              <div class="text-3xl font-bold text-gray-800 mb-2">50+</div>
+              <div class="text-gray-600">Game Modes</div>
+            </div>
+            <div class="text-center">
+              <div class="text-3xl font-bold text-gray-800 mb-2">4.8/5</div>
+              <div class="text-gray-600">Player Rating</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ Section -->
+      <section class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+          <h2 class="text-3xl font-bold text-center mb-12">Frequently Asked Questions</h2>
+          <div class="max-w-3xl mx-auto space-y-4">
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+              <button class="w-full px-6 py-4 text-left font-semibold flex justify-between items-center">
+                What are the system requirements?
+                <i class="fas fa-chevron-down transform transition-transform"></i>
+              </button>
+              <div class="px-6 py-4 bg-gray-50 hidden">
+                <p class="text-gray-600">The game runs on most modern browsers with WebGL support.</p>
+              </div>
+            </div>
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+              <button class="w-full px-6 py-4 text-left font-semibold flex justify-between items-center">
+                How do I install mods?
+                <i class="fas fa-chevron-down transform transition-transform"></i>
+              </button>
+              <div class="px-6 py-4 bg-gray-50 hidden">
+                <p class="text-gray-600">Simply click on the mod you want to play and it will automatically load.</p>
+              </div>
+            </div>
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+              <button class="w-full px-6 py-4 text-left font-semibold flex justify-between items-center">
+                Is multiplayer free?
+                <i class="fas fa-chevron-down transform transition-transform"></i>
+              </button>
+              <div class="px-6 py-4 bg-gray-50 hidden">
+                <p class="text-gray-600">Yes, all features including multiplayer are completely free!</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer class="bg-gray-900 text-white py-8">
+        <div class="container mx-auto px-6 text-center">
+          <p>&copy; 2024 Sprunki Sinner Edition. All rights reserved.</p>
+        </div>
+      </footer>
+
+      <script src="main.js"></script>
+    </body>
+  </html>

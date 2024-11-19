@@ -14,4 +14,15 @@ document.addEventListener('DOMContentLoaded', () => {
             icon.classList.toggle('rotate-180');
         });
     });
+
+    // Mobile Menu Interaction
+    const menuButton = document.querySelector('.md\\:hidden.text-gray-600');
+    const mobileMenu = document.querySelector('.md\\:hidden.hidden');
+    
+    if (menuButton && mobileMenu) {
+        menuButton.addEventListener('click', () => {
+            // Toggle mobile menu visibility
+            mobileMenu.classList.toggle('hidden');
+        });
+    }
 });
